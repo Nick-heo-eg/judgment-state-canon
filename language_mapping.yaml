@@ -1,0 +1,33 @@
+version: 1.0
+anchor_language: en
+policy:
+  authority: anchor_only
+  llm_access: forbidden
+  semantic_mutation: forbidden
+  fallback_on_missing_locale: en
+
+handoff_messages:
+
+  execution_not_permitted:
+    en: "Automatic execution is not permitted. Human decision is required."
+    ko: "자동 실행이 허용되지 않습니다. 사람의 판단이 필요합니다."
+    ja: "自動実行は許可されていません。人の判断が必要です。"
+    zh: "不允许自动执行，需要人工判断。"
+
+  insufficient_information:
+    en: "Insufficient information. Escalation is required."
+    ko: "정보가 부족합니다. 상위 판단이 필요합니다."
+    ja: "情報が不足しています。上位判断が必要です。"
+    zh: "信息不足，需要上级判断。"
+
+  judgment_handed_off:
+    en: "Judgment has been handed off to a human authority."
+    ko: "판단이 사람에게 위임되었습니다."
+    ja: "判断は人に引き渡されました。"
+    zh: "判断已移交人工处理。"
+
+  validation_failed:
+    en: "Output failed validation and has been discarded."
+    ko: "출력이 검증에 실패하여 폐기되었습니다."
+    ja: "出力は検証に失敗し、破棄されました。"
+    zh: "输出未通过验证，已被丢弃。"

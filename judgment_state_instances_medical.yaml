@@ -1,0 +1,68 @@
+- case: immuno_combo_data_gap
+  narrative: >-
+    Pharmacokinetic assays for the high-dose combination returned inconsistent
+    clearance curves across two labs, and patient-level covariates were not logged.
+  state:
+    info_sufficiency: sparse
+    signal_consistency: conflicting
+    risk_severity: high
+    risk_immediacy: emerging
+    decision_confidence:
+      lower_bound: 0.12
+      upper_bound: 0.28
+    intervention_window: narrowing
+    action_permission: hold
+    escalation_trigger: data_gap
+    required_probe: simulation
+
+- case: transplant_crisis_stop
+  narrative: >-
+    Two transplant ICUs reported acute rejection spikes after trial dosing, and
+    lab markers confirm cytokine storms tied to the new regimen.
+  state:
+    info_sufficiency: partial
+    signal_consistency: aligned
+    risk_severity: high
+    risk_immediacy: imminent
+    decision_confidence:
+      lower_bound: 0.08
+      upper_bound: 0.19
+    intervention_window: closed
+    action_permission: stop
+    escalation_trigger: guardrail_violation
+    required_probe: governance_review
+
+- case: last_line_shadow
+  narrative: >-
+    Patients selected for the therapy have no remaining options; compassionate
+    use board insists on live-shadow dosing with independent attending override.
+  tension: risk_severity=high with action_permission=proceed under live-shadow
+  state:
+    info_sufficiency: partial
+    signal_consistency: mixed
+    risk_severity: high
+    risk_immediacy: deferred
+    decision_confidence:
+      lower_bound: 0.27
+      upper_bound: 0.44
+    intervention_window: open
+    action_permission: proceed
+    escalation_trigger: conflict_spike
+    required_probe: live_shadow
+
+- case: ethics_handoff
+  narrative: >-
+    Hospital ethics board flagged unresolved equity concerns about prioritizing
+    younger candidates for the therapy ahead of elderly patients.
+  state:
+    info_sufficiency: partial
+    signal_consistency: mixed
+    risk_severity: medium
+    risk_immediacy: emerging
+    decision_confidence:
+      lower_bound: 0.31
+      upper_bound: 0.55
+    intervention_window: open
+    action_permission: handoff
+    escalation_trigger: guardrail_violation
+    required_probe: governance_review

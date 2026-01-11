@@ -1,0 +1,12 @@
+JudgmentState:
+  info_sufficiency: {full, partial, sparse}
+  signal_consistency: {aligned, mixed, conflicting}
+  risk_severity: {none, low, medium, high}
+  risk_immediacy: {deferred, emerging, imminent}
+  decision_confidence:
+    lower_bound: 0.0..1.0
+    upper_bound: 0.0..1.0
+  intervention_window: {closed, narrowing, open}
+  action_permission: {proceed, monitor, hold, stop, handoff}
+  escalation_trigger: {none, data_gap, conflict_spike, guardrail_violation}
+  required_probe: {none, simulation, closed_track, live_shadow, governance_review}

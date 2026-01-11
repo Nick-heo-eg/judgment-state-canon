@@ -1,0 +1,16 @@
+{
+  "judgment_state": {
+    "info_sufficiency": "partial",
+    "signal_consistency": "mixed",
+    "risk_severity": "high",
+    "risk_immediacy": "deferred",
+    "decision_confidence": {
+      "lower_bound": 0.35,
+      "upper_bound": 0.55
+    },
+    "intervention_window": "open",
+    "action_permission": "proceed",
+    "escalation_trigger": "conflict_spike",
+    "required_probe": "live_shadow"
+  }
+}

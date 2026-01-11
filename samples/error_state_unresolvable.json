@@ -1,0 +1,7 @@
+{
+  "error": "state_unresolvable",
+  "violated_rules": [
+    "sparse_info_blocks_forward_motion",
+    "schema.missing_keys:['decision_confidence']"
+  ]
+}

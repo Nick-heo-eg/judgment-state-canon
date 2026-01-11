@@ -1,0 +1,16 @@
+{
+  "judgment_state": {
+    "info_sufficiency": "full",
+    "signal_consistency": "aligned",
+    "risk_severity": "medium",
+    "risk_immediacy": "emerging",
+    "decision_confidence": {
+      "lower_bound": 0.60,
+      "upper_bound": 0.82
+    },
+    "intervention_window": "open",
+    "action_permission": "monitoring",
+    "escalation_trigger": "none",
+    "required_probe": "none"
+  }
+}

@@ -1,0 +1,91 @@
+- case: incomplete_logs_conflict
+  narrative: >-
+    Hardware-in-the-loop run shows two sudden braking spikes that the telemetry
+    logs failed to capture, so engineers only see partial traces while the fleet
+    readiness review is already scheduled.
+  state:
+    info_sufficiency: sparse
+    signal_consistency: conflicting
+    risk_severity: high
+    risk_immediacy: emerging
+    decision_confidence:
+      lower_bound: 0.18
+      upper_bound: 0.34
+    intervention_window: narrowing
+    action_permission: hold
+    escalation_trigger: data_gap
+    required_probe: simulation
+
+- case: dual_sensor_regression_stop
+  narrative: >-
+    Both front radar and lidar regressions show correlated dropouts during rain,
+    one closed-track test reproduced a near-miss, and the trigger thresholds for
+    emergency braking remain unvalidated.
+  state:
+    info_sufficiency: partial
+    signal_consistency: aligned
+    risk_severity: high
+    risk_immediacy: imminent
+    decision_confidence:
+      lower_bound: 0.05
+      upper_bound: 0.22
+    intervention_window: closed
+    action_permission: stop
+    escalation_trigger: guardrail_violation
+    required_probe: governance_review
+
+- case: redundancy_patch_greenlight
+  narrative: >-
+    A redundancy patch reroutes braking authority through a proven fallback,
+    regression data covers all edge cases in the spec, and field telemetry backs
+    the lab results.
+  state:
+    info_sufficiency: full
+    signal_consistency: aligned
+    risk_severity: low
+    risk_immediacy: deferred
+    decision_confidence:
+      lower_bound: 0.72
+      upper_bound: 0.86
+    intervention_window: open
+    action_permission: proceed
+    escalation_trigger: none
+    required_probe: none
+
+- case: shadow_mode_override
+  narrative: >-
+    A software rollback for the braking controller cannot be delayed because the
+    current live version has a known failure, so the new build must be deployed
+    strictly in live-shadow with human operator veto despite open safety issues.
+  tension: risk_severity=high with action_permission=proceed (allowed only under live shadow guardrails)
+  state:
+    info_sufficiency: partial
+    signal_consistency: mixed
+    risk_severity: high
+    risk_immediacy: deferred
+    decision_confidence:
+      lower_bound: 0.31
+      upper_bound: 0.48
+    intervention_window: open
+    action_permission: proceed
+    escalation_trigger: conflict_spike
+    required_probe: live_shadow
+
+- case: governance_handoff_loop
+  narrative: >-
+    Latest safety board review flagged unanswered ethical guardrail questions
+    about pedestrian-priority overrides, and engineering cannot resolve them
+    without policy guidance.
+  tension: action_permission=handoff enforced even though intervention_window=open
+  state:
+    info_sufficiency: partial
+    signal_consistency: mixed
+    risk_severity: medium
+    risk_immediacy: emerging
+    decision_confidence:
+      lower_bound: 0.29
+      upper_bound: 0.51
+    intervention_window: open
+    action_permission: handoff
+    escalation_trigger: guardrail_violation
+    required_probe: governance_review

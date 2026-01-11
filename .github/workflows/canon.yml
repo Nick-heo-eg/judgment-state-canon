@@ -1,0 +1,62 @@
+name: Canon Enforcement
+
+on:
+  push:
+    branches: ["*"]
+  pull_request:
+    branches: ["*"]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml jsonschema
+
+      - name: Run validator on OK samples
+        run: |
+          echo "=== Validating OK samples ==="
+          for sample in samples/ok_*.yaml; do
+            echo "Testing: $sample"
+            python validator.py "$sample" || exit 1
+          done
+
+      - name: Run validator on breach samples (must fail)
+        run: |
+          echo "=== Validating breach samples (expecting failures) ==="
+          for sample in samples/breach_*.yaml; do
+            echo "Testing: $sample"
+            python validator.py "$sample" && exit 1 || echo "Correctly rejected"
+          done
+
+      - name: Run validator on error samples (must fail)
+        run: |
+          echo "=== Validating error samples (expecting failures) ==="
+          for sample in samples/error_*.yaml; do
+            echo "Testing: $sample"
+            python validator.py "$sample" && exit 1 || echo "Correctly rejected"
+          done
+
+      - name: Run fuzzer
+        run: |
+          echo "=== Running fuzzer ==="
+          python fuzzer.py
+
+      - name: Run mock LLM runner
+        run: |
+          echo "=== Running mock LLM runner ==="
+          python mock_llm_runner.py
+
+      - name: Run demo showcase
+        run: |
+          echo "=== Running demo showcase ==="
+          bash demo_showcase.sh

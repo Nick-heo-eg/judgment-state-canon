@@ -1,0 +1,2 @@
+{"timestamp":"2025-05-01T10:21:05Z","model_id":"mock-llm-v0","prompt_hash":"q1_tok_v1","canon_version":"abcd123","envelope":{"ok":true},"violated_rules":[],"action_taken":"forward","judgment_state_file":"samples/ok_high_risk_live_shadow.json"}
+{"timestamp":"2025-05-01T10:21:07Z","model_id":"mock-llm-v0","prompt_hash":"q1_tok_v1","canon_version":"abcd123","envelope":{"ok":false,"error":"state_unresolvable"},"violated_rules":["high_risk_proceed_guardrail"],"action_taken":"handoff"}
