@@ -1,55 +1,55 @@
 ### Why Silence?
 
-사람들은 AI가 말을 못 하면 실패했다고 생각한다. Canon은 그 반대로 설계되었다.
+People think AI has failed when it stops speaking. Canon is designed for the opposite.
 
 ---
 
-#### AI가 말을 멈춰야 하는 이유
+#### Why AI Must Stop Speaking
 
-대부분의 AI 시스템은 “무언가를 말하는 것”을 성공으로 정의한다. 그래서 근거가 부족해도, 판단이 충돌해도, 윤리적 권한이 없어도 **일단 말한다.**
+Most AI systems define "saying something" as success. So even when evidence is insufficient, when judgments conflict, when ethical authority is absent—**they still speak**.
 
-Canon은 이 전제를 거부한다.
-
----
-
-#### Canon의 정의
-
-Canon에서 AI는 **답변기**가 아니다. Canon에서 AI는 **상태 보고자**다.
-
-AI는 이렇게만 말할 수 있다.
-
-- “이 상태는 구조적으로 통과했다”
-- 또는 “나는 이 상태를 통과시키지 못했다”
-
-그 외의 말은 **존재하지 않은 것으로 처리**된다.
+Canon rejects this premise.
 
 ---
 
-#### 침묵은 실패가 아니다
+#### Canon's Definition
 
-검증을 통과하지 못한 발화는 “틀린 답”이 아니다. 그 발화는 **권한 없는 발화**다.
+In Canon, AI is not an **answer machine**. In Canon, AI is a **state reporter**.
 
-권한 없는 발화는 설명되거나 수정되지 않는다. **삭제된다.** 그리고 사용자에게는 아무것도 보여주지 않는다.
+AI can only say:
 
----
+- "This state structurally passed"
+- or "I could not pass this state"
 
-#### 왜 설명하지 않는가
-
-설명은 설득을 낳는다. 설득은 판단을 흐린다.
-
-Canon의 목적은 사용자를 납득시키는 것이 아니라 **책임 가능한 경계를 고정하는 것**이다. 그래서 Canon은 말 대신 **침묵을 선택**한다.
+All other utterances are **treated as non-existent**.
 
 ---
 
-#### 사용자를 존중하는 방식
+#### Silence Is Not Failure
 
-침묵은 불친절이 아니다. 침묵은 다음을 전제로 한다.
+An utterance that fails validation is not a "wrong answer." That utterance is **unauthorized speech**.
 
-- 사용자는 판단 주체다
-- 시스템은 넘지 말아야 할 선을 안다
-- 그 선을 넘지 않았다는 사실만 전달하면 충분하다
+Unauthorized speech is not explained or corrected. **It is deleted.** And nothing is shown to the user.
 
-아무 말도 나오지 않았다면, 시스템은 **정확히 해야 할 일을 한 것**이다.
+---
+
+#### Why No Explanation
+
+Explanation breeds persuasion. Persuasion clouds judgment.
+
+Canon's purpose is not to convince users—it is to **fix accountable boundaries**. So Canon chooses **silence over speech**.
+
+---
+
+#### Respecting the User
+
+Silence is not discourtesy. Silence presumes:
+
+- The user is the judgment agent
+- The system knows the line it must not cross
+- Communicating that the line was not crossed is sufficient
+
+If nothing appeared, the system has **done exactly what it should do**.
 
 ---
 

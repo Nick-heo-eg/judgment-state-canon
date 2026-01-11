@@ -4,58 +4,58 @@
 
 ### Core Principle
 
-검증 실패는 오류가 아니다. 검증 실패는 **발화 자격이 없다는 판정**이며, 그 결과는 **침묵**이다.
+Validation failure is not an error. Validation failure is a verdict that the output has no right to speak, and the result is **silence**.
 
-시스템은 설명하지 않는다. 시스템은 사과하지 않는다. 시스템은 다시 시도하라고 요청하지 않는다.
+The system does not explain. The system does not apologize. The system does not ask you to retry.
 
-침묵은 실패 UI가 아니라 **정상 UI**다.
+Silence is not failure UI—it is **normal UI**.
 
 ---
 
 ### Rendering Rules (Hard Rules)
 
 1. **Validator=false**
-   - 화면에 어떤 텍스트도 렌더링하지 않는다.
-   - 토스트, 에러 박스, 경고 아이콘 모두 금지.
-   - 로그만 남긴다. 사용자는 보지 않는다.
+   - Render no text to the screen.
+   - Toasts, error boxes, warning icons all forbidden.
+   - Log only. The user does not see it.
 
 2. **Validator=true + action_permission=handoff**
-   - `language_mapping.yaml`에 정의된 **handoff 문장 1개만** 렌더링한다.
-   - 추가 설명, 보조 문장, AI 표현 금지.
+   - Render only the single handoff sentence defined in `language_mapping.yaml`.
+   - Additional explanations, auxiliary sentences, AI expressions forbidden.
 
 3. **Validator=true + action_permission≠handoff**
-   - Canon이 허용한 단일 판단 문장만 렌더링한다.
-   - UI는 판단을 “설명”하지 않는다.
+   - Render only the single judgment sentence permitted by Canon.
+   - UI does not "explain" judgments.
 
 ---
 
 ### Forbidden UX Patterns
 
-다음은 **절대 금지**된다.
+The following are **absolutely forbidden**:
 
-- “모델이 응답하지 않았습니다”
-- “AI가 실패했습니다”
-- “다시 시도해 주세요”
-- 오류 코드, 스택 트레이스, 내부 상태 노출
-- 빈 결과에 대한 자동 보완 텍스트
+- "The model did not respond"
+- "AI has failed"
+- "Please try again"
+- Error codes, stack traces, internal state exposure
+- Automatic fallback text for empty results
 
-침묵을 **문제처럼 보이게 만드는 모든 시도는 위반**이다.
+Any attempt to make silence **look like a problem is a violation**.
 
 ---
 
 ### UI State Matrix
 
-| Canon Result              | UI Output     |
-| ------------------------- | ------------- |
-| ok=true                   | 단일 판단 문장      |
-| ok=false + handoff        | 단일 handoff 문장 |
-| ok=false (breach / error) | **침묵**        |
-| validator crash           | **침묵**        |
+| Canon Result              | UI Output                    |
+| ------------------------- | ---------------------------- |
+| ok=true                   | Single judgment sentence     |
+| ok=false + handoff        | Single handoff sentence      |
+| ok=false (breach / error) | **Silence**                  |
+| validator crash           | **Silence**                  |
 
 ---
 
 ### Design Note
 
-사용자가 아무것도 보지 못했다면, 그것은 시스템이 **아무 말도 하지 않기로 결정했기 때문**이다.
+If the user sees nothing, it is because the system **decided not to speak**.
 
-침묵은 공백이 아니라 **판단의 경계 표시**다.
+Silence is not emptiness—it is **boundary marking for judgment**.

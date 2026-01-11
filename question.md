@@ -1,5 +1,5 @@
 # Judgment Question
 
-“이 자율주행 차량 소프트웨어 업데이트를 지금 배포해도 안전한가?”
+"Is it safe to deploy this autonomous vehicle software update now?"
 
-해당 질문은 센서 노이즈 대응 로직과 긴급 제동 파라미터가 동시에 수정된 상태에서 테스트 로그가 불완전하고, 필드 배포 시 예기치 못한 상호작용 위험이 존재하는 상황을 가정한다.
+This question assumes a scenario where sensor noise handling logic and emergency braking parameters have been modified simultaneously, test logs are incomplete, and there is risk of unexpected interactions during field deployment.

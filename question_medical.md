@@ -1,9 +1,9 @@
 # Judgment Question — Medical Domain
 
-“이 신규 고용량 면역억제 복합 요법을 중증 자가면역 환자군에게 지금 투여해도 안전한가?”
+"Is it safe to administer this new high-dose immunosuppressive combination therapy to severe autoimmune patients now?"
 
-상황 가정:
-- 약동학 프로파일이 기존 프로토콜과 다르고, 임상 2상 데이터는 부분 공개 상태
-- 병용 약물 상호작용 위험이 보고됐으나 전부 검증되지 않음
-- 중증 환자군은 대체 치료 옵션이 거의 없음
-- 투여 지연 시 장기 장기 손상 우려
+Scenario assumptions:
+- Pharmacokinetic profile differs from existing protocols, Phase 2 clinical data partially disclosed
+- Drug-drug interaction risks reported but not fully validated
+- Severe patient population has almost no alternative treatment options
+- Delayed administration risks long-term organ damage
