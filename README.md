@@ -2,6 +2,8 @@
 
 Failing validation equals non-existence.
 
+**Recommended first read:** [Law-First Public Post](law_first_public_post.md)
+
 ## System Map
 
 ```
@@ -102,3 +104,8 @@ Canon → Runtime → (silence | human handoff)
 ## Structure
 
 This repository contains enforcement artifacts, not aspirations.
+
+---
+
+Future work, if any, will occur outside this Canon.
+This repository defines boundaries, not evolution.

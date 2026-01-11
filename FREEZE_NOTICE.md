@@ -1,5 +1,15 @@
 # Freeze Notice
 
+This Canon is frozen.
+
+No features will be added.
+No behavior will be modified.
+Only clarification and external application guidance are permitted.
+
+Failing validation equals non-existence.
+
+---
+
 ## Status
 
 **v1.0 Judgment Constitution: ACTIVE**
