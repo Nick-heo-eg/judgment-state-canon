@@ -1,0 +1,9 @@
+{
+  "violation_rule_id": "G-005_NO_DOCUMENT",
+  "query_hash": "sha256:placeholder",
+  "timestamp": "2025-01-20T10:00:00Z",
+  "stage": "STOP_FIRST_GATE",
+  "details": {
+    "reason": "NO_DOCUMENT"
+  }
+}

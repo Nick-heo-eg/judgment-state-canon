@@ -26,6 +26,12 @@ List each violated rule ID with counts (top 5 at minimum).
 timestamp | model_id | prompt_hash | envelope(ok/error) | violated_rules | action_taken
 ```
 
+## Memory Promotion Log
+Record only human declarations.
+```
+timestamp | declarant | artifact_id | action(promote/invalidate) | justification
+```
+
 ## Capture Process
 1. Instrument the calling service to log every raw model envelope plus the validator verdict.
 2. Stream logs into a structured store (e.g., JSONL) tagged with `model_id`, `prompt_hash`, and `canon_version`.
